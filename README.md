@@ -1,6 +1,6 @@
-#Projet Qt - Gestion des notes des joueurs
+# Projet Qt - Gestion des notes des joueurs
 
-##Description
+## Description
 Ce projet utilise Qt pour créer une interface graphique permettant d'afficher, de modifier et de mettre à jour des notes (ratings) des joueurs dans une base de données MySQL. Les notes sont représentées sous forme d'étoiles et peuvent être modifiées par l'utilisateur dans une table.
 
 **Prérequis**
