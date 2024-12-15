@@ -36,14 +36,20 @@ Copier le code
 
 db.setUserName("votre_utilisateur");
 db.setPassword("votre_mot_de_passe");
-Utilisation
-Lancer l'application : Compilez et exécutez le projet avec Qt Creator ou en ligne de commande avec `qmake` et `make`.
 
-Interface graphique : L'application affichera une table avec les informations des joueurs, y compris leur nom, leur club, et leur note sous forme d'étoiles.
+## Utilisation
 
-Modifier une note : Double-cliquez sur la colonne "Rating" pour modifier la note d'un joueur. La nouvelle note sera automatiquement mise à jour dans la base de données.
+-**Lancer l'application :** Compilez et exécutez le projet avec Qt Creator ou en ligne de commande avec `qmake` et `make`.
 
-Fonctionnement du code
-Interface graphique : L'application utilise un `QTableWidget` pour afficher les informations des joueurs. Chaque ligne représente un joueur et la colonne "Rating" affiche sa note sous forme d'étoiles.
-Mise à jour de la base de données : Lorsque l'utilisateur modifie une note, la fonction updateRatingInDatabase est appelée pour mettre à jour la base de données MySQL avec la nouvelle note.
-Gestion de l'édition des notes : La classe StarRating est utilisée pour afficher et gérer les étoiles, et un délégué personnalisé (StarDelegate) permet à l'utilisateur de modifier les notes.
+-**Interface graphique :** L'application affichera une table avec les informations des joueurs, y compris leur nom, leur club, et leur note sous forme d'étoiles.
+
+-**Modifier une note :** Double-cliquez sur la colonne "Rating" pour modifier la note d'un joueur. La nouvelle note sera automatiquement mise à jour dans la base de données.
+
+## Fonctionnement du code
+
+-**Interface graphique :**
+L'application utilise un `QTableWidget` pour afficher les informations des joueurs. Chaque ligne représente un joueur et la colonne "Rating" affiche sa note sous forme d'étoiles.
+-**Mise à jour de la base de données :**
+Lorsque l'utilisateur modifie une note, la fonction updateRatingInDatabase est appelée pour mettre à jour la base de données MySQL avec la nouvelle note.
+-**Gestion de l'édition des notes :**
+La classe StarRating est utilisée pour afficher et gérer les étoiles, et un délégué personnalisé (StarDelegate) permet à l'utilisateur de modifier les notes.
