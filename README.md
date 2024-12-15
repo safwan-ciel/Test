@@ -3,16 +3,11 @@
 ## Description
 Ce projet utilise Qt pour créer une interface graphique permettant d'afficher, de modifier et de mettre à jour des notes (ratings) des joueurs dans une base de données MySQL. Les notes sont représentées sous forme d'étoiles et peuvent être modifiées par l'utilisateur dans une table.
 
-**Prérequis**
+# Prérequis
 Avant de commencer, vous devez avoir installé les éléments suivants sur votre machine :
 
-Qt 5 ou 6 : pour le développement de l'interface graphique.
-MySQL : pour la gestion de la base de données.
-Qt SQL module : pour interagir avec la base de données MySQL.
-Installation
-Installer Qt : Si vous n'avez pas encore installé Qt, vous pouvez le télécharger et l'installer depuis le site officiel : Qt Installer.
-
-Installer MySQL : Téléchargez et installez MySQL sur votre machine à partir de MySQL Downloads. Assurez-vous que MySQL est bien en cours d'exécution.
+- Qt 5 ou 6 : pour le développement de l'interface graphique.
+- MySQL : pour la gestion de la base de données.
 
 Création de la base de données : Une fois MySQL installé et en cours d'exécution, créez une base de données avec une table pour stocker les informations des joueurs. Voici un exemple de script SQL :
 
