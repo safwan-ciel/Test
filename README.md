@@ -11,8 +11,9 @@ Avant de commencer, vous devez avoir installé les éléments suivants sur votre
 
 Création de la base de données : Une fois MySQL installé et en cours d'exécution, créez une base de données avec une table pour stocker les informations des joueurs. Voici un exemple de script SQL :
 
-sql
+
 Copier le code
+\begin{verbatim}
 CREATE DATABASE foot;
 USE foot;
 
@@ -27,14 +28,17 @@ INSERT INTO jeu (nom, club, rating) VALUES
 ('Joueur1', 'ClubA', 3),
 ('Joueur2', 'ClubB', 5),
 ('Joueur3', 'ClubC', 4);
+\end{verbatim}
+
 Configuration de la connexion à la base de données : Dans le code source, assurez-vous de configurer correctement votre nom d'utilisateur et votre mot de passe MySQL dans le fichier main.cpp :
 
-cpp
+
 Copier le code
+
 db.setUserName("votre_utilisateur");
 db.setPassword("votre_mot_de_passe");
 Utilisation
-Lancer l'application : Compilez et exécutez le projet avec Qt Creator ou en ligne de commande avec qmake et make.
+Lancer l'application : Compilez et exécutez le projet avec Qt Creator ou en ligne de commande avec `qmake` et `make`.
 
 Interface graphique : L'application affichera une table avec les informations des joueurs, y compris leur nom, leur club, et leur note sous forme d'étoiles.
 
