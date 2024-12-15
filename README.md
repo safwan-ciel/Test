@@ -6,8 +6,8 @@ Ce projet utilise Qt pour créer une interface graphique permettant d'afficher, 
 # Prérequis
 Avant de commencer, vous devez avoir installé les éléments suivants sur votre machine :
 
-- Qt 5 ou 6 : pour le développement de l'interface graphique.
-- MySQL : pour la gestion de la base de données.
+- **Qt 5 ou 6 :** pour le développement de l'interface graphique.
+- **MySQL :** pour la gestion de la base de données.
 
 Création de la base de données : Une fois MySQL installé et en cours d'exécution, créez une base de données avec une table pour stocker les informations des joueurs. Voici un exemple de script SQL :
 
@@ -49,7 +49,9 @@ db.setPassword("votre_mot_de_passe");
 
 -**Interface graphique :**
 L'application utilise un `QTableWidget` pour afficher les informations des joueurs. Chaque ligne représente un joueur et la colonne "Rating" affiche sa note sous forme d'étoiles.
+
 -**Mise à jour de la base de données :**
 Lorsque l'utilisateur modifie une note, la fonction updateRatingInDatabase est appelée pour mettre à jour la base de données MySQL avec la nouvelle note.
+
 -**Gestion de l'édition des notes :**
 La classe StarRating est utilisée pour afficher et gérer les étoiles, et un délégué personnalisé (StarDelegate) permet à l'utilisateur de modifier les notes.
