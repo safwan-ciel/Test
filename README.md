@@ -13,7 +13,7 @@ Création de la base de données : Une fois MySQL installé et en cours d'exécu
 
 
 Copier le code
-\begin{verbatim}
+
 CREATE DATABASE foot;
 USE foot;
 
@@ -28,7 +28,6 @@ INSERT INTO jeu (nom, club, rating) VALUES
 ('Joueur1', 'ClubA', 3),
 ('Joueur2', 'ClubB', 5),
 ('Joueur3', 'ClubC', 4);
-\end{verbatim}
 
 Configuration de la connexion à la base de données : Dans le code source, assurez-vous de configurer correctement votre nom d'utilisateur et votre mot de passe MySQL dans le fichier main.cpp :
 
@@ -45,6 +44,6 @@ Interface graphique : L'application affichera une table avec les informations de
 Modifier une note : Double-cliquez sur la colonne "Rating" pour modifier la note d'un joueur. La nouvelle note sera automatiquement mise à jour dans la base de données.
 
 Fonctionnement du code
-Interface graphique : L'application utilise un QTableWidget pour afficher les informations des joueurs. Chaque ligne représente un joueur et la colonne "Rating" affiche sa note sous forme d'étoiles.
+Interface graphique : L'application utilise un `QTableWidget` pour afficher les informations des joueurs. Chaque ligne représente un joueur et la colonne "Rating" affiche sa note sous forme d'étoiles.
 Mise à jour de la base de données : Lorsque l'utilisateur modifie une note, la fonction updateRatingInDatabase est appelée pour mettre à jour la base de données MySQL avec la nouvelle note.
 Gestion de l'édition des notes : La classe StarRating est utilisée pour afficher et gérer les étoiles, et un délégué personnalisé (StarDelegate) permet à l'utilisateur de modifier les notes.
