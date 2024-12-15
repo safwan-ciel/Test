@@ -23,6 +23,7 @@ public:
     int maxStarCount() const { return myMaxStarCount; }
     void setStarCount(int starCount) { myStarCount = starCount; }
     void setMaxStarCount(int maxStarCount) { myMaxStarCount = maxStarCount; }
+    int getRating() const { return myStarCount; }  // Retourne le nombre d'étoiles sélectionnées
 
 private:
     QPolygonF starPolygon;
@@ -34,6 +35,6 @@ private:
 
 //! [1]
 Q_DECLARE_METATYPE(StarRating)
-//! [1]
 
 #endif
+
