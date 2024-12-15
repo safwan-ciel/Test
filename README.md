@@ -29,7 +29,7 @@ INSERT INTO jeu (nom, club, rating) VALUES
 ('Joueur2', 'ClubB', 5),
 ('Joueur3', 'ClubC', 4);
 
-Configuration de la connexion à la base de données : Dans le code source, assurez-vous de configurer correctement votre nom d'utilisateur et votre mot de passe MySQL dans le fichier main.cpp :
+Configuration de la connexion à la base de données : Dans le code source, assurez-vous de configurer correctement ***votre nom d'utilisateur*** et ***votre mot de passe MySQL*** dans le fichier main.cpp :
 
 
 Copier le code
