@@ -1,43 +1,23 @@
-\documentclass[a4paper,12pt]{article}
-\usepackage{hyperref}
+#Projet Qt - Gestion des notes des joueurs
 
-\title{Projet Qt - Gestion des notes des joueurs}
-\author{Votre nom}
-\date{\today}
-
-\begin{document}
-
-\maketitle
-
-\section*{Description}
-
+##Description
 Ce projet utilise Qt pour créer une interface graphique permettant d'afficher, de modifier et de mettre à jour des notes (ratings) des joueurs dans une base de données MySQL. Les notes sont représentées sous forme d'étoiles et peuvent être modifiées par l'utilisateur dans une table.
 
-\section*{Prérequis}
-
+**Prérequis**
 Avant de commencer, vous devez avoir installé les éléments suivants sur votre machine :
 
-\begin{itemize}
-    \item \textbf{Qt 5 ou 6} : pour le développement de l'interface graphique.
-    \item \textbf{MySQL} : pour la gestion de la base de données.
-    \item \textbf{Qt SQL module} : pour interagir avec la base de données MySQL.
-\end{itemize}
+Qt 5 ou 6 : pour le développement de l'interface graphique.
+MySQL : pour la gestion de la base de données.
+Qt SQL module : pour interagir avec la base de données MySQL.
+Installation
+Installer Qt : Si vous n'avez pas encore installé Qt, vous pouvez le télécharger et l'installer depuis le site officiel : Qt Installer.
 
-\section*{Installation}
+Installer MySQL : Téléchargez et installez MySQL sur votre machine à partir de MySQL Downloads. Assurez-vous que MySQL est bien en cours d'exécution.
 
-\subsection*{1. Installer Qt}
+Création de la base de données : Une fois MySQL installé et en cours d'exécution, créez une base de données avec une table pour stocker les informations des joueurs. Voici un exemple de script SQL :
 
-Si vous n'avez pas encore installé Qt, vous pouvez le télécharger et l'installer depuis le site officiel : \href{https://www.qt.io/download}{Qt Installer}.
-
-\subsection*{2. Installer MySQL}
-
-Téléchargez et installez MySQL sur votre machine à partir de \href{https://dev.mysql.com/downloads/}{MySQL Downloads}. Assurez-vous que MySQL est bien en cours d'exécution.
-
-\subsection*{3. Création de la base de données}
-
-Une fois MySQL installé et en cours d'exécution, créez une base de données avec une table pour stocker les informations des joueurs. Voici un exemple de script SQL :
-
-\begin{verbatim}
+sql
+Copier le code
 CREATE DATABASE foot;
 USE foot;
 
@@ -52,27 +32,20 @@ INSERT INTO jeu (nom, club, rating) VALUES
 ('Joueur1', 'ClubA', 3),
 ('Joueur2', 'ClubB', 5),
 ('Joueur3', 'ClubC', 4);
-\end{verbatim}
+Configuration de la connexion à la base de données : Dans le code source, assurez-vous de configurer correctement votre nom d'utilisateur et votre mot de passe MySQL dans le fichier main.cpp :
 
-\subsection*{4. Configuration de la connexion à la base de données}
-
-Dans le code source, assurez-vous de configurer correctement votre nom d'utilisateur et votre mot de passe MySQL dans le fichier \texttt{main.cpp} :
-
-\begin{verbatim}
+cpp
+Copier le code
 db.setUserName("votre_utilisateur");
 db.setPassword("votre_mot_de_passe");
-\end{verbatim}
+Utilisation
+Lancer l'application : Compilez et exécutez le projet avec Qt Creator ou en ligne de commande avec qmake et make.
 
-\section*{Utilisation}
+Interface graphique : L'application affichera une table avec les informations des joueurs, y compris leur nom, leur club, et leur note sous forme d'étoiles.
 
-\subsection*{1. Lancer l'application}
+Modifier une note : Double-cliquez sur la colonne "Rating" pour modifier la note d'un joueur. La nouvelle note sera automatiquement mise à jour dans la base de données.
 
-Compilez et exécutez le projet avec Qt Creator ou en ligne de commande avec \texttt{qmake} et \texttt{make}.
-
-\subsection*{2. Interface graphique}
-
-L'application affichera une table avec les informations des joueurs, y compris leur nom, leur club, et leur note sous forme d'étoiles.
-
-\subsection*{3. Modifier une note}
-
-Double-cliquez sur la colonne ``Rating'' pour modifier la note d'un joueur. La nouvelle note sera automatique
+Fonctionnement du code
+Interface graphique : L'application utilise un QTableWidget pour afficher les informations des joueurs. Chaque ligne représente un joueur et la colonne "Rating" affiche sa note sous forme d'étoiles.
+Mise à jour de la base de données : Lorsque l'utilisateur modifie une note, la fonction updateRatingInDatabase est appelée pour mettre à jour la base de données MySQL avec la nouvelle note.
+Gestion de l'édition des notes : La classe StarRating est utilisée pour afficher et gérer les étoiles, et un délégué personnalisé (StarDelegate) permet à l'utilisateur de modifier les notes.
