@@ -8,11 +8,14 @@
 #include "StarRating.h"
 
 //! [0]
-void StarDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
-                         const QModelIndex &index) const
+void StarDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
-    if (index.data().canConvert<StarRating>()) {
+    QVariant data = index.data(Qt::UserRole);
+    qDebug() << "Donnée reçue :" << data;
+
+    if (data.canConvert<StarRating>()) {
         StarRating starRating = qvariant_cast<StarRating>(index.data());
+        qDebug() << "Nombre d'étoiles :" << starRating.starCount();
 
         if (option.state & QStyle::State_Selected)
             painter->fillRect(option.rect, option.palette.highlight());
@@ -20,6 +23,7 @@ void StarDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
         starRating.paint(painter, option.rect, option.palette,
                          StarRating::EditMode::ReadOnly);
     } else {
+        qDebug() << "Aucun StarRating trouvé.";
         QStyledItemDelegate::paint(painter, option, index);
     }
     //! [0]
@@ -29,7 +33,8 @@ void StarDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
 QSize StarDelegate::sizeHint(const QStyleOptionViewItem &option,
                              const QModelIndex &index) const
 {
-    if (index.data().canConvert<StarRating>()) {
+    QVariant data = index.data(Qt::UserRole);
+    if (data.canConvert<StarRating>()) {
         StarRating starRating = qvariant_cast<StarRating>(index.data());
         return starRating.sizeHint();
     }
@@ -43,7 +48,8 @@ QWidget *StarDelegate::createEditor(QWidget *parent,
                                     const QModelIndex &index) const
 
 {
-    if (index.data().canConvert<StarRating>()) {
+    QVariant data = index.data(Qt::UserRole);
+    if (data.canConvert<StarRating>()) {
         StarEditor *editor = new StarEditor(parent);
         connect(editor, &StarEditor::editingFinished,
                 this, &StarDelegate::commitAndCloseEditor);
@@ -57,7 +63,8 @@ QWidget *StarDelegate::createEditor(QWidget *parent,
 void StarDelegate::setEditorData(QWidget *editor,
                                  const QModelIndex &index) const
 {
-    if (index.data().canConvert<StarRating>()) {
+    QVariant data = index.data(Qt::UserRole);
+    if (data.canConvert<StarRating>()) {
         StarRating starRating = qvariant_cast<StarRating>(index.data());
         StarEditor *starEditor = qobject_cast<StarEditor *>(editor);
         starEditor->setStarRating(starRating);
@@ -71,7 +78,8 @@ void StarDelegate::setEditorData(QWidget *editor,
 void StarDelegate::setModelData(QWidget *editor, QAbstractItemModel *model,
                                 const QModelIndex &index) const
 {
-    if (index.data().canConvert<StarRating>()) {
+    QVariant data = index.data(Qt::UserRole);
+    if (data.canConvert<StarRating>()) {
         StarEditor *starEditor = qobject_cast<StarEditor *>(editor);
         model->setData(index, QVariant::fromValue(starEditor->starRating()));
     } else {
@@ -88,3 +96,4 @@ void StarDelegate::commitAndCloseEditor()
     emit closeEditor(editor);
 }
 //! [5]
+
