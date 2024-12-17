@@ -8,42 +8,21 @@ Avant de commencer, vous devez avoir installé les éléments suivants sur votre
 
 - **Qt 5 ou 6 :** pour le développement de l'interface graphique.
 - Se rendre dans le site de QT https://download.qt.io/official_releases/qtcreator/15.0/15.0.0/qt-creator-opensource-linux-x86_64-15.0.0.run
+- Installer le paquet suivant `sudo apt install build-essential qt5-default qtcreator qttools5-dev-tools qttools5-dev`
 - **MySQL :** pour la gestion de la base de données.
   - `sudo apt upgrade`
   - `sudo apt install mysql-server`
   - `mysqladmin -u root password 'mot_de_passe'`
-  - Ensuite créer une base de données avec la commande `CREATE DATABASE nomdevotrebasededonnees;`
-  - Ensuite pour pouvoir faire des requêtes SQL il faut créer un autre utilisateur :
+  - Créer une base de données avec la commande `CREATE DATABASE nomdevotrebasededonnees;`
+  - Pour pouvoir faire des requêtes SQL il faut créer un autre utilisateur :
   - `CREATE USER 'nom_utilisateur'@'hôte' IDENTIFIED BY 'mot_de_passe';`
   - `GRANT ALL PRIVILEGES ON *.* TO 'nom_utilisateur'@'loclahost;'`
-
-Création de la base de données : Une fois MySQL installé et en cours d'exécution, créez une base de données avec une table pour stocker les informations des joueurs. Voici un exemple de script SQL :
-
-
-Copier le code
-
-`CREATE DATABASE foot;
-USE foot;`
-
-`CREATE TABLE jeu (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    nom VARCHAR(100),
-    club VARCHAR(100),
-    rating INT
-);`
-
-INSERT INTO jeu (nom, club, rating) VALUES
-('Joueur1', 'ClubA', 3),
-('Joueur2', 'ClubB', 5),
-('Joueur3', 'ClubC', 4);
+  - Charger la base de données : `sudo mysql -u utilisateur -p < /chemin/vers/BDDTP5.sql`
 
 Configuration de la connexion à la base de données : Dans le code source, assurez-vous de configurer correctement ***votre nom d'utilisateur*** et ***votre mot de passe MySQL*** dans le fichier main.cpp :
 
-
-Copier le code
-
-db.setUserName("votre_utilisateur");
-db.setPassword("votre_mot_de_passe");
+- `db.setUserName("votre_utilisateur");`
+- `db.setPassword("votre_mot_de_passe");`
 
 ## Utilisation
 
