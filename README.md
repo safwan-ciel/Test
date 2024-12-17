@@ -1,26 +1,5 @@
-\documentclass{article}
-\usepackage{xcolor}
-\usepackage{listings}
 # Projet Qt - Gestion des notes des joueurs
 
-
-\lstset{
-    backgroundcolor=\color{lightgray},   % couleur de fond
-    basicstyle=\ttfamily,                % police de base
-    keywordstyle=\color{blue},           % couleur des mots-clés
-    commentstyle=\color{green},          % couleur des commentaires
-    stringstyle=\color{red},             % couleur des chaînes
-}
-
-\begin{document}
-
-\begin{lstlisting}[language=Python]
-# Ceci est un commentaire
-def hello_world():
-    print("Hello, World!")  # Affiche un message
-\end{lstlisting}
-
-\end{document}
 ## Description
 Ce projet utilise Qt pour créer une interface graphique permettant d'afficher, de modifier et de mettre à jour des notes (ratings) des joueurs dans une base de données MySQL. Les notes sont représentées sous forme d'étoiles et peuvent être modifiées par l'utilisateur dans une table.
 
@@ -28,7 +7,7 @@ Ce projet utilise Qt pour créer une interface graphique permettant d'afficher, 
 Avant de commencer, vous devez avoir installé les éléments suivants sur votre machine :
 
 - **Qt 5 ou 6 :** pour le développement de l'interface graphique.
-- https://download.qt.io/official_releases/qtcreator/15.0/15.0.0/qt-creator-opensource-linux-x86_64-15.0.0.run
+- Se rendre dans le site de QT https://download.qt.io/official_releases/qtcreator/15.0/15.0.0/qt-creator-opensource-linux-x86_64-15.0.0.run
 - **MySQL :** pour la gestion de la base de données.
   - `sudo apt upgrade`
   - `sudo apt install mysql-server`
