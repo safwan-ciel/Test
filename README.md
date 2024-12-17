@@ -1,6 +1,26 @@
+\documentclass{article}
+\usepackage{xcolor}
+\usepackage{listings}
 # Projet Qt - Gestion des notes des joueurs
-\usepackage{hyperref}
 
+
+\lstset{
+    backgroundcolor=\color{lightgray},   % couleur de fond
+    basicstyle=\ttfamily,                % police de base
+    keywordstyle=\color{blue},           % couleur des mots-clés
+    commentstyle=\color{green},          % couleur des commentaires
+    stringstyle=\color{red},             % couleur des chaînes
+}
+
+\begin{document}
+
+\begin{lstlisting}[language=Python]
+# Ceci est un commentaire
+def hello_world():
+    print("Hello, World!")  # Affiche un message
+\end{lstlisting}
+
+\end{document}
 ## Description
 Ce projet utilise Qt pour créer une interface graphique permettant d'afficher, de modifier et de mettre à jour des notes (ratings) des joueurs dans une base de données MySQL. Les notes sont représentées sous forme d'étoiles et peuvent être modifiées par l'utilisateur dans une table.
 
@@ -8,14 +28,15 @@ Ce projet utilise Qt pour créer une interface graphique permettant d'afficher, 
 Avant de commencer, vous devez avoir installé les éléments suivants sur votre machine :
 
 - **Qt 5 ou 6 :** pour le développement de l'interface graphique.
-- \href{https://download.qt.io/official_releases/qtcreator/15.0/15.0.0/qt-creator-opensource-linux-x86_64-15.0.0.run}.
+- https://download.qt.io/official_releases/qtcreator/15.0/15.0.0/qt-creator-opensource-linux-x86_64-15.0.0.run
 - **MySQL :** pour la gestion de la base de données.
   - `sudo apt upgrade`
   - `sudo apt install mysql-server`
-  - `mysqladmin -u root password 'votremotdepasse'`
+  - `mysqladmin -u root password 'mot_de_passe'`
   - Ensuite créer une base de données avec la commande `CREATE DATABASE nomdevotrebasededonnees;`
   - Ensuite pour pouvoir faire des requêtes SQL il faut créer un autre utilisateur :
-  - `GRANT ALL PRIVILEGES ON *.* TO 'nom'@'loclahost;'`
+  - `CREATE USER 'nom_utilisateur'@'hôte' IDENTIFIED BY 'mot_de_passe';`
+  - `GRANT ALL PRIVILEGES ON *.* TO 'nom_utilisateur'@'loclahost;'`
 
 Création de la base de données : Une fois MySQL installé et en cours d'exécution, créez une base de données avec une table pour stocker les informations des joueurs. Voici un exemple de script SQL :
 
