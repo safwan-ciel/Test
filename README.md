@@ -7,16 +7,17 @@ Ce projet utilise Qt pour créer une interface graphique permettant d'afficher, 
 Avant de commencer, vous devez avoir installé les éléments suivants sur votre machine :
 
 - **Qt 5 ou 6 :** pour le développement de l'interface graphique.
-- Se rendre dans le site de QT https://download.qt.io/official_releases/qtcreator/15.0/15.0.0/qt-creator-opensource-linux-x86_64-15.0.0.run
-- Installer le paquet suivant `sudo apt install build-essential qt5-default qtcreator qttools5-dev-tools qttools5-dev`
+  - Se rendre dans le site de QT https://download.qt.io/official_releases/qtcreator/15.0/15.0.0/qt-creator-opensource-linux-x86_64-15.0.0.run
+  - Installer le paquet suivant `sudo apt install build-essential qt5-default qtcreator qttools5-dev-tools qttools5-dev`
+  
 - **MySQL :** pour la gestion de la base de données.
-  - `sudo apt upgrade`
-  - `sudo apt install mysql-server`
-  - `mysqladmin -u root password 'mot_de_passe'`
+  - Mettre à jour les paquets `sudo apt upgrade`
+  - Installer MySQL `sudo apt install mysql-server`
+  - **Créer le mot de passe de l'utilisateur root** `mysqladmin -u root password 'mot_de_passe'`
   - Créer une base de données avec la commande `CREATE DATABASE nomdevotrebasededonnees;`
   - Pour pouvoir faire des requêtes SQL il faut créer un autre utilisateur :
-  - `CREATE USER 'nom_utilisateur'@'hôte' IDENTIFIED BY 'mot_de_passe';`
-  - `GRANT ALL PRIVILEGES ON *.* TO 'nom_utilisateur'@'loclahost;'`
+    - `CREATE USER 'nom_utilisateur'@'hôte' IDENTIFIED BY 'mot_de_passe';`
+    - `GRANT ALL PRIVILEGES ON *.* TO 'nom_utilisateur'@'loclahost;'`
   - Charger la base de données : `sudo mysql -u utilisateur -p < /chemin/vers/BDDTP5.sql`
 
 Configuration de la connexion à la base de données : Dans le code source, assurez-vous de configurer correctement ***votre nom d'utilisateur*** et ***votre mot de passe MySQL*** dans le fichier main.cpp :
