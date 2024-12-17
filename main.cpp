@@ -78,10 +78,10 @@ int main(int argc, char *argv[])
 
     //Ouverture de la BDD sous le nom "bd"
     QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setDatabaseName("foot");
+    db.setDatabaseName("TP5");
 
-    db.setUserName("safwan");
-    db.setPassword("safwan");
+    db.setUserName("invite");
+    db.setPassword("invite");
     if(db.open())
     {
         qDebug() << "Vous êtes maintenant connecté à " << db.hostName();
