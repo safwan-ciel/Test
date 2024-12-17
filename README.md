@@ -8,21 +8,23 @@ Avant de commencer, vous devez avoir installé les éléments suivants sur votre
 
 - **Qt 5 ou 6 :** pour le développement de l'interface graphique.
 - **MySQL :** pour la gestion de la base de données.
+  - `sudo apt upgrade`
+  - `sudo apt install mysql-server`
 
 Création de la base de données : Une fois MySQL installé et en cours d'exécution, créez une base de données avec une table pour stocker les informations des joueurs. Voici un exemple de script SQL :
 
 
 Copier le code
 
-CREATE DATABASE foot;
-USE foot;
+`CREATE DATABASE foot;
+USE foot;`
 
-CREATE TABLE jeu (
+`CREATE TABLE jeu (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nom VARCHAR(100),
     club VARCHAR(100),
     rating INT
-);
+);`
 
 INSERT INTO jeu (nom, club, rating) VALUES
 ('Joueur1', 'ClubA', 3),
